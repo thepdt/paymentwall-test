@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
 import { IRootState } from '@Types/store';
 
-import task from './task';
+import payment from './payment';
 
 Vue.use(Vuex);
 
@@ -11,7 +11,7 @@ const store: StoreOptions<IRootState> = {
     author: 'ThepDT',
     version: '1.0.0'
   },
-  modules: { task },
+  modules: { payment },
 
   // enable strict mode (adds overhead!)
   // for dev mode only

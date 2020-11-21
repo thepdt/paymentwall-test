@@ -2,12 +2,8 @@ import { RouteConfig } from 'vue-router';
 const routes: RouteConfig[] = [
   {
     path: '/',
-    redirect: '/tasks'
-  },
-  {
-    path: '/tasks',
-    name: 'tasks',
-    component: () => import('src/pages/Tasks.vue'),
+    name: 'home',
+    component: () => import('src/pages/Index.vue'),
     meta: {
       requiresAuth: true,
       permission: 'user'

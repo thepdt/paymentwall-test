@@ -49,6 +49,7 @@ module.exports = function(ctx) {
       components: [
         'QLayout',
         'QHeader',
+        'QFooter',
         'QDrawer',
         'QPageContainer',
         'QPage',
@@ -70,7 +71,10 @@ module.exports = function(ctx) {
         'QSpace',
         'QSlideTransition',
         'QSeparator',
-        'QCheckbox'
+        'QCheckbox',
+        'QImg',
+        'QSpinner',
+        'QResizeObserver'
       ],
 
       directives: ['Ripple'],
@@ -110,7 +114,9 @@ module.exports = function(ctx) {
           // eslint-disable-next-line no-undef
           '@Styles': path.resolve(__dirname, './src/css'),
           // eslint-disable-next-line no-undef
-          '@Types': path.resolve(__dirname, './src/interfaces')
+          '@Types': path.resolve(__dirname, './src/interfaces'),
+          // eslint-disable-next-line no-undef
+          '@Boot': path.resolve(__dirname, './src/boot')
         };
       }
     },

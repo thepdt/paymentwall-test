@@ -13,7 +13,8 @@
     "paths": {
       "@Components/*": ["./src/components/*"],
       "@Styles/*": ["./src/css/*"],
-      "@Types/*": ["./src/interfaces/*"]
+      "@Types/*": ["./src/interfaces/*"],
+      "@Boot/*": ["./src/boot/*"]
     }
   },
   "exclude": ["node_modules"]
