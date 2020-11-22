@@ -4,7 +4,7 @@
       view="lHh lpr lFf"
       container
       :style="{ minHeight: `${pageHeight}px` }"
-      class="shadow-2 rounded-borders"
+      class="shadow-2"
     >
       <q-header elevated class="bg-black">
         <q-toolbar style="height: 55px; padding: 0 30px">
@@ -34,8 +34,11 @@
               />
               <payment-method-list :isLoading="isLoadingPaymentMethodList" />
             </div>
-            <div class="col-sm-7 col-12">
-              <div class="component-title">Payment form</div>
+            <div class="col-sm-7 col-12 q-pl-none q-pl-sm-xl">
+              <div class="component-title">
+                Payment form
+              </div>
+              <payment-form :isLoading="isLoadingPaymentMethodList" />
             </div>
           </div>
         </q-page>
@@ -52,7 +55,8 @@ const namespace = 'payment';
 @Component({
   components: {
     CountrySelector: () => import('@Components/pages/CountrySelector.vue'),
-    PaymentMethodList: () => import('@Components/pages/PaymentMethodList.vue')
+    PaymentMethodList: () => import('@Components/pages/PaymentMethodList.vue'),
+    PaymentForm: () => import('@Components/pages/PaymentForm.vue')
   }
 })
 export default class Payment extends Vue {

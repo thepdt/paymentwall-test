@@ -78,7 +78,7 @@ module.exports = function(ctx) {
       ],
 
       directives: ['Ripple'],
-
+      cssAddon: true,
       // Quasar plugins
       plugins: ['LocalStorage', 'Notify', 'Dialog']
     },

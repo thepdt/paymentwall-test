@@ -1,8 +1,8 @@
 <template>
   <q-select
-    dense
+    label="Country"
     outlined
-    class="q-mb-sm"
+    class="q-mb-md"
     :value="selectedCountry"
     :options="countryOptions"
     option-value="code"
