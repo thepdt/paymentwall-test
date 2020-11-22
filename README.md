@@ -10,7 +10,7 @@ yarn
 
 ### Set up environment variable
 
-- Create .env file in ./src folder
+- Create .env file in project folder
 - Define variables on .env file base on .env.example file
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
