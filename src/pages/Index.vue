@@ -12,19 +12,30 @@
             src="statics/paymentwall-logo.svg"
             style="width: 180px; height: 23px"
           />
-          <q-space />
-          <q-btn flat round dense icon="whatshot" />
         </q-toolbar>
       </q-header>
 
       <q-footer elevated class="bg-black">
         <q-toolbar>
-          <q-toolbar-title>Footer</q-toolbar-title>
+          <div class="q-mx-auto">
+            <q-img
+              src="statics/paymentwall-logo.svg"
+              style="width: 108px; height: 14px"
+            />
+            © Powered by Paymentwall.
+            <a
+              href="https://www.paymentwall.com/en/privacypolicy"
+              target="_blank"
+              rel="Privacy Policy"
+            >
+              Privacy Policy</a
+            >
+          </div>
         </q-toolbar>
       </q-footer>
 
       <q-page-container>
-        <q-page style="padding: 25px" class="payment-container">
+        <q-page class="payment-container q-pa-md q-pa-sm-lg">
           <div class="row">
             <div class="col-sm-5 col-12">
               <div class="component-title">Select payment method</div>
@@ -36,7 +47,8 @@
             </div>
             <div class="col-sm-7 col-12 q-pl-none q-pl-sm-xl">
               <div class="component-title">
-                Payment form
+                Payment form:
+                {{ selectedPaymentMethod && selectedPaymentMethod.name }}
               </div>
               <payment-form :isLoading="isLoadingPaymentMethodList" />
             </div>
@@ -60,23 +72,27 @@ const namespace = 'payment';
   }
 })
 export default class Payment extends Vue {
-  @Action('getGeolocation', { namespace }) getGeolocation!: Function;
+  @State(state => state.payment.selectedCountry) selectedCountry!: string;
   @State(state => state.payment.paymentMethodList) paymentMethodList!: any[];
+  @State(state => state.payment.selectedPaymentMethod)
+  selectedPaymentMethod!: any[];
+  @Action('getGeolocation', { namespace }) getGeolocation!: Function;
 
-  public isLoadingGeoLocaction: boolean = true;
-  public isLoadingPaymentMethodList: boolean = true;
+  public isLoadingGeoLocaction: boolean = false;
+  public isLoadingPaymentMethodList: boolean = false;
   public pageHeight: number = 0;
 
   async created() {
     this.onResize();
-    try {
-      this.isLoadingGeoLocaction = true;
-      this.isLoadingPaymentMethodList = true;
-      await this.getGeolocation();
-    } finally {
-      this.isLoadingGeoLocaction = false;
-      this.isLoadingPaymentMethodList = false;
-    }
+    if (!this.selectedCountry)
+      try {
+        this.isLoadingGeoLocaction = true;
+        this.isLoadingPaymentMethodList = true;
+        await this.getGeolocation();
+      } finally {
+        this.isLoadingGeoLocaction = false;
+        this.isLoadingPaymentMethodList = false;
+      }
   }
 
   mounted() {

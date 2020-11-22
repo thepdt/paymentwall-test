@@ -8,6 +8,15 @@ const routes: RouteConfig[] = [
       requiresAuth: true,
       permission: 'user'
     }
+  },
+  {
+    path: '/success',
+    name: 'success',
+    component: () => import('src/pages/Success.vue'),
+    meta: {
+      requiresAuth: true,
+      permission: 'user'
+    }
   }
 ];
 

@@ -1,4 +1,4 @@
-# Sota Tek Test App (sota-tek-test)
+# Paymentwall Test App (paymentwall-test)
 
 Dinh Ton Thep
 
@@ -7,6 +7,11 @@ Dinh Ton Thep
 ```bash
 yarn
 ```
+
+### Set up environment variable
+
+- Create .env file in ./src folder
+- Define variables on .env file base on .env.example file
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 

@@ -21,6 +21,13 @@ $negative: #c10015;
 $info: #31ccec;
 $warning: #f2c037;
 
+$orangish: #ffc013;
+.text-orangish {
+  color: $orangish;
+}
+.bg-orangish {
+  background: $orangish;
+}
 $breakpoint-xs: 600px;
 $breakpoint-sm: 1024px;
 $breakpoint-md: 1440px;

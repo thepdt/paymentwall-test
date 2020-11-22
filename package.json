@@ -1,8 +1,8 @@
 {
-  "name": "sota-tek-test",
+  "name": "paymentwall-test",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Sota Tek Test App",
+  "productName": "Paymentwall Test App",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Thepdt",
@@ -14,7 +14,6 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
-    "card-validator": "^8.1.0",
     "moment": "^2.29.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",

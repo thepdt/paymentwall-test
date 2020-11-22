@@ -142,8 +142,8 @@ module.exports = function(ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Sota Tek Test App',
-        // short_name: 'Sota Tek Test App',
+        // name: 'Paymentwall Test App',
+        // short_name: 'Paymentwall Test App',
         // description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
@@ -207,7 +207,7 @@ module.exports = function(ctx) {
 
       builder: {
         // https://www.electron.build/configuration/configuration
-        // appId: 'sota-tek-test'
+        // appId: 'paymentwall-test'
       }
     }
   };
