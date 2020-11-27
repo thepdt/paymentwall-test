@@ -16,6 +16,7 @@
       outlined
       class="q-mb-md"
       :rules="cardNumberRules"
+      lazy-rules
       mask="#### #### #### ####"
       unmasked-value
     />
@@ -26,6 +27,7 @@
         outlined
         class="q-mb-md col-12 col-sm-6 q-pr-sm-xs"
         mask="##/####"
+        lazy-rules
         :rules="expirationDateRules"
       >
       </q-input>
@@ -112,9 +114,13 @@ export default class PaymentForm extends Vue {
 
   public expirationDateRules = [
     (val: any) =>
-      !val || moment(val, 'MM/YYYY', true).isValid() || 'Invalid date format',
+      !val ||
+      moment(val, 'MM/YYYY', true).isValid() ||
+      moment(val, 'MM/YY', true).isValid() ||
+      'Invalid date format',
     (val: any) =>
       moment(val, 'MM/YYYY').isAfter(moment().subtract(1, 'months')) ||
+      moment(val, 'MM/YY').isAfter(moment().subtract(1, 'months')) ||
       'Please enter a future date'
   ];
 

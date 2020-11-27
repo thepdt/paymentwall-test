@@ -9,9 +9,7 @@
     option-label="country"
     emit-value
     map-options
-    use-input
     :loading="isLoading"
-    @filter="filterFn"
     @input="onSelectcountry"
   />
 </template>
@@ -35,17 +33,17 @@ export default class CountrySelector extends Vue {
   //Define data
   public countryOptions: any[] = CountryList;
 
-  private filterFn(val: string, update: any) {
-    update(() => {
-      if (!val) this.countryOptions = CountryList;
-      else {
-        const needle = val.toLowerCase();
-        this.countryOptions = CountryList.filter(v =>
-          v.country.toLowerCase().includes(needle)
-        );
-      }
-    });
-  }
+  // private filterFn(val: string, update: any) {
+  //   update(() => {
+  //     if (!val) this.countryOptions = CountryList;
+  //     else {
+  //       const needle = val.toLowerCase();
+  //       this.countryOptions = CountryList.filter(v =>
+  //         v.country.toLowerCase().includes(needle)
+  //       );
+  //     }
+  //   });
+  // }
 
   private async onSelectcountry(value: string) {
     try {
